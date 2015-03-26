@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import os
 import sys
@@ -30,4 +30,4 @@ if __name__  == "__main__" :
     if len(sys.argv) == 2 :
         os.execvp("vim", ("vim", ) + convert_grep_file_arg(sys.argv[1]))
     else:
-        os.execvp("vim", ("vim", ) + sys.argv[1:])
+        os.execvp("vim", ("vim", ) + tuple(sys.argv[1:]))
